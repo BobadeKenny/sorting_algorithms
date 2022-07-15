@@ -9,22 +9,22 @@
 
 void insertion_sort_list(listint_t **list)
 {
-    listint_t temp;
-    listint_t swap;
+    listint_t *next;
+    listint_t *sorted = NULL;
     listint_t *node = *list;
 
     node = node->next;
 
-    while (node->next != NULL)
+    while (node != NULL)
     {
-        temp = *node;
+        next = node->next;
+        node->prev = node->next = NULL;
         while (temp->prev->n > temp->n)
         {
-            swap = temp->prev;
-            temp->prev = temp;
-            temp = swap;
-            print_list(*temp);
-            temp = temp->prev;
+            swap = temp->prev->prev;
+            swap->next = temp;
+            swap->next->next = temp->prev;
+            print_list(swap);
         }
         node = node->next;
     }
