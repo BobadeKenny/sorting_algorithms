@@ -1,31 +1,38 @@
 #include "sort.h"
+#include <stdio.h>
 
 /**
- * bubble_sort - sorts an array of integers in ascending order using the Bubble sort algorithm
- * @array: array to be sorted
- * @size: size of the array
+ * insertion_sort_list - sorts a doubly linked list of integers in ascending order
+ * @list: list to be sorted
  * Return: Null
  */
 
 void insertion_sort_list(listint_t **list)
 {
-    listint_t *next;
-    listint_t *sorted = NULL;
-    listint_t *node = *list;
+    listint_t *temp;
+    listint_t *node;
 
-    node = node->next;
-
+    if (*list == NULL)
+    {}
+    node = (*list)->next;
     while (node != NULL)
     {
-        next = node->next;
-        node->prev = node->next = NULL;
-        while (temp->prev->n > temp->n)
+        temp = node;
+        while (temp->prev != NULL && temp->prev->n > temp->n)
         {
-            swap = temp->prev->prev;
-            swap->next = temp;
-            swap->next->next = temp->prev;
-            print_list(swap);
+            temp->prev->next = temp->next;
+			if (temp->next != NULL)
+				temp->next->prev = temp->prev;
+			temp->next = temp->prev;
+			temp->prev = temp->next->prev;
+			temp->next->prev = temp;
+			if (temp->prev == NULL)
+				*list = temp;
+			else
+				temp->prev->next = temp;
+			print_list(*list);
         }
         node = node->next;
+
     }
 }
