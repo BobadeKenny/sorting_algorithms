@@ -63,7 +63,8 @@ top_down_merge(copy, start, middle, size, array);
  * @copy: copied array
  * Return: Null
  */
-void top_down_merge(int *copy, size_t start, size_t middle, size_t size, int *array)
+void top_down_merge(int *copy, size_t start,
+size_t middle, size_t size, int *array)
 {
 size_t i, j, k;
 
@@ -78,7 +79,7 @@ for (k = start; k < size; k++)
 {
 if (i < middle && (j >= size || copy[i] <= copy[j]))
 {
-array[k] =copy[i];
+array[k] = copy[i];
 i += 1;
 }
 else
