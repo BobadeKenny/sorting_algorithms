@@ -13,6 +13,10 @@ size_t i;
 int temp;
 int swapped;
 
+if (size < 2)
+{
+return;
+}
 do {
 swapped = 0;
 for (i = 1; i < size; i++)

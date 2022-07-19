@@ -15,6 +15,10 @@ size_t j;
 size_t min;
 int temp;
 
+if (size < 2)
+{
+return;
+}
 for (i = 0; i < size; i++)
 {
 min = i;

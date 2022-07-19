@@ -16,6 +16,10 @@ size_t j;
 int *count;
 int *output;
 
+if (size < 2)
+{
+return;
+}
 output = malloc(sizeof(int) * size);
 k = array[0];
 for (j = 1; j < size; j++)
