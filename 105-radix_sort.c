@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stdlib.h>
 
 /**
  * radix_sort - sorts an array of integers
@@ -13,7 +14,7 @@ int max, place;
 size_t i;
 
 max = array[0];
-for (i = 1; i < size; j++)
+for (i = 1; i < size; i++)
 {
 if (array[i] > max)
 {
@@ -22,16 +23,25 @@ max = array[i];
 }
 for (place = 1; max / place > 0; place *= 10)
 {
-countingSort(array, size, place);
+countingsort(array, size, place);
 print_array(array, size);
 }
 }
 
-void countingSort(int *array, size_t size, int place)
+/**
+ * countingsort - sorts an array of integers
+ * in ascending order using the counting sort algorithm
+ * @array: array to be sorted
+ * @size: size of the array
+ * @place: significant place
+ * Return: Null
+ */
+void countingsort(int *array, size_t size, int place)
 {
 int *output;
 int *count;
-int max, i;
+int max, j;
+size_t i;
 
 output = malloc(sizeof(int) * (size + 1));
 max = (array[0] / place) % 10;
@@ -43,24 +53,24 @@ max = array[i];
 }
 }
 count = malloc(sizeof(int) * (max + 1));
-for (int i = 0; i < max; ++i)
+for (j = 0; j < max; ++j)
 {
-count[i] = 0;
+count[j] = 0;
 }
-for (int i = 0; i < size; i++)
+for (i = 0; i < size; i++)
 {
 count[(array[i] / place) % 10]++;
 }
-for (int i = 1; i < 10; i++)
+for (j = 1; j < 10; j++)
 {
-count[i] += count[i - 1];
+count[j] += count[j - 1];
 }
-for (int i = size - 1; i >= 0; i--)
+for (j = size - 1; j >= 0; j--)
 {
-output[count[(array[i] / place) % 10] - 1] = array[i];
-count[(array[i] / place) % 10]--;
+output[count[(array[j] / place) % 10] - 1] = array[j];
+count[(array[j] / place) % 10]--;
 }
-for (int i = 0; i < size; i++)
+for (i = 0; i < size; i++)
 {
 array[i] = output[i];
 }
