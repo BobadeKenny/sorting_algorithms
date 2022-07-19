@@ -1,6 +1,4 @@
 #include "sort.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
  * heap_sort - sorts an array of integers
