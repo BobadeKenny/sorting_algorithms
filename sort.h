@@ -35,6 +35,6 @@ void top_down_merge(int *copy, size_t start,
 size_t middle, size_t size, int *array);
 void heap_sort(int *array, size_t size);
 void heapify (int *array, size_t size);
-void sift_down (int *array, size_t start, size_t end);
+void sift_down (int *array, size_t start, size_t end, size_t size);
 
 #endif

@@ -20,9 +20,9 @@ while (i > 0)
 temp =  array[0];
 array[0] = array[i];
 array[i] = temp;
-i -= 1;
-sift_down(array, 0, i);
 print_array(array, size);
+i -= 1;
+sift_down(array, 0, i, size);
 }
 }
 
@@ -40,8 +40,7 @@ int start;
 start = (size - 2) / 2;
 while (start >= 0)
 {
-sift_down(array, start, size - 1);
-print_array(array, size);
+sift_down(array, start, size - 1, size);
 start -= 1;
 }
 }
@@ -54,7 +53,7 @@ start -= 1;
  * @end: size of the array
  * Return: Null
  */
-void sift_down(int *array, size_t start, size_t end)
+void sift_down(int *array, size_t start, size_t end, size_t size)
 {
 size_t swap, root, child;
 int temp;
@@ -82,6 +81,7 @@ temp = array[root];
 array[root] = array[swap];
 array[swap] = temp;
 root = swap;
+print_array(array,size);
 }
 }
 }
