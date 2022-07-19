@@ -3,7 +3,7 @@
 
 /**
  * counting_sort - sorts an array of integers
- * in ascending order using the Bubble sort algorithm
+ * in ascending order using the counting sort algorithm
  * @array: array to be sorted
  * @size: size of the array
  * Return: Null
@@ -11,7 +11,7 @@
 
 void counting_sort(int *array, size_t size)
 {
-int i,k;
+int i, k;
 size_t j;
 int *count;
 int *output;

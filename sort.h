@@ -28,5 +28,10 @@ int partition(int *array, int low, int high, size_t size);
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
+void merge_sort(int *array, size_t size);
+void copy_array(int *array, size_t start, size_t size, int *copy);
+void top_down_split_merge(int *copy, size_t start, size_t size, int *array);
+void top_down_merge(int *copy, size_t start, size_t middle, size_t size, int *array);
+
 
 #endif
