@@ -51,6 +51,7 @@ start -= 1;
  * @array: array to be sorted
  * @start: size of the array
  * @end: size of the array
+ * @size: size of the array
  * Return: Null
  */
 void sift_down(int *array, size_t start, size_t end, size_t size)
@@ -81,7 +82,7 @@ temp = array[root];
 array[root] = array[swap];
 array[swap] = temp;
 root = swap;
-print_array(array,size);
+print_array(array, size);
 }
 }
 }
