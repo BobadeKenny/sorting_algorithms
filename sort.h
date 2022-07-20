@@ -38,5 +38,9 @@ void heapify (int *array, size_t size);
 void sift_down (int *array, size_t start, size_t end, size_t size);
 void radix_sort(int *array, size_t size);
 void countingsort(int *array, size_t size, int place);
+void bitonic_sort(int *array, size_t size);
+void quick_sort_hoare(int *array, size_t size);
+int partition_hoare(int *array, int low, int high, size_t size);
+void quicksort_hoare(int *array, int low, int high, size_t size);
 
 #endif
