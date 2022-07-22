@@ -14,7 +14,9 @@ listint_t *node;
 listint_t *temp;
 
 if (*list == NULL)
-{}
+{
+return;
+}
 node = (*list)->next;
 while (node != NULL)
 {

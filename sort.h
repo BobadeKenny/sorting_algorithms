@@ -34,8 +34,8 @@ void top_down_split_merge(int *copy, size_t start, size_t size, int *array);
 void top_down_merge(int *copy, size_t start,
 size_t middle, size_t size, int *array);
 void heap_sort(int *array, size_t size);
-void heapify (int *array, size_t size);
-void sift_down (int *array, size_t start, size_t end, size_t size);
+void heapify(int *array, size_t size);
+void sift_down(int *array, size_t start, size_t end, size_t size);
 void radix_sort(int *array, size_t size);
 void countingsort(int *array, size_t size, int place);
 void bitonic_sort(int *array, size_t size);
